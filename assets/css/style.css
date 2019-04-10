@@ -1,0 +1,17 @@
+h1 {
+    color: aqua;
+    text-align: center;
+    padding: 20px;
+}
+body {
+    background-image: url(../images/thailand.jpg)
+}
+
+.container {
+    background-color: aqua;
+    padding: 50px;
+}
+
+#buttons {
+    left: 410px;
+}
