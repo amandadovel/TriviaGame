@@ -5,6 +5,7 @@ h1 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     text-shadow: 2px 2px #016028;
+    font-size: 52px;
 }
 
 body {
@@ -13,12 +14,11 @@ body {
 }
 
 .container {
-    background-color:#baf3cd;
+    background-color:rgb(186, 243, 205, 0.9);
     padding: 50px;
     color: #016028;
-    border-color: #016028;
-    border-width: 5px;
-    border-style: solid; 
+    border: #016028 5px solid;
+    box-shadow: 2px 2px 10px 2px #016028 inset;
 }
 
 #buttons {
@@ -27,7 +27,14 @@ body {
 
 .btn-success {
     background-color:#016028;
-    color: #c4f5d0;   
+    color: #cff6dd;   
+}
+
+.btn-success:hover {
+    background-color: #cff6dd;
+    box-shadow: 2px 2px 10px 2px #016028;
+    border-radius: 5px;
+    color: #016028;
 }
 
 #timeremaining {
@@ -39,10 +46,28 @@ body {
 #questionblock {
     text-align: center;
     font-family: 'Playfair Display', serif;
+    font-weight: bold;   
 }
 
 #answerblock {
     text-align: center;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
+    font-size: 22px;
+}
+
+.answerchoice:hover {
+    background-color: #cff6dd;
+    box-shadow: 2px 2px 10px 2px #016028;
+    border-radius: 5px;
+}
+
+.answerchoice {
+    width: 30%;
+    margin: auto;
+    transition: all 0.5s;
+}
+
+.photo {
+    box-shadow: 2px 2px 10px 2px #016028;
 }

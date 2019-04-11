@@ -181,7 +181,7 @@ function displayQuestion() {
 }
 // Defines hidepicturefunction
     function hidePicture () {
-        $("#answerblock").append("<img src="  + pick.photo + ">");
+        $("#answerblock").append("<img class='photo' src="  + pick.photo + ">");
         newArray.push(pick);
         options.splice(index,1);
 
