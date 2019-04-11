@@ -46,31 +46,31 @@ $(document).ready(function(){
             question: "What event takes place at Black Rock City?",
             choices: ["A large religious gathering to worship a giant black rock", "A Native American pow wow", "running of the bulls", "Thousands gather to burn a giant wooden sculpture of a man"],
             answer: 3,
-            photo:""
+            photo:"assets/images/burningman.jpeg"
         },
         {
             question: "Which of these countries is the birth place of Yoga?",
-            choices: "",
-            answer: "",
-            photo:""
+            choices: ["America", "Vietnam", "India", "England"],
+            answer: 2,
+            photo:"assets/images/rishikesh.jpg"
         },
         {
-            question: "",
-            choices: "",
-            answer: "",
-            photo:""
+            question: "In this country they have a festival called Loi Krathong, which is one of the largest floating lantern festivals in this world.",
+            choices: ["Thailand", "China", "Taiwan", "Japan"],
+            answer: 0,
+            photo:"assets/images/lanterns.jpg"
         }, 
         {
-            question: "",
-            choices: "",
-            answer: "",
-            photo:""
+            question: "This country is known as the adventure capital of the world.",
+            choices: ["South Africa", "Canada", "Thailand", "New Zealand"],
+            answer: 3,
+            photo:"assets/images/nevis.jpg"
         },
         {
-            question: "",
-            choices: "",
-            answer: "",
-            photo:""
+            question: "This animal is monogamous for life and faced extinction in Costa Rica because once they're separated from their mate they will never mate again.",
+            choices: ["Jaguars", "Parrots", "Monkeys", "Toucans"],
+            answer: 1,
+            photo:"assets/images/parrots.jpg"
         },
 
     ]

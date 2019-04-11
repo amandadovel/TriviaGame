@@ -1,17 +1,42 @@
 h1 {
-    color: aqua;
+    color:#c4f5d0;
     text-align: center;
     padding: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-shadow: 2px 2px #016028;
 }
+
 body {
-    background-image: url(../images/thailand.jpg)
+    background-image: url(../images/krabi.jpg);
+    background-repeat: no-repeat;
 }
 
 .container {
-    background-color: aqua;
+    background-color:#baf3cd;
     padding: 50px;
+    color: #016028;
+    border-color: #016028;
+    border-width: 5px;
+    border-style: solid; 
 }
 
 #buttons {
-    left: 410px;
+    margin-left: 45%;
+}
+
+#timeremaining {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+
+}
+
+#questionblock {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+#answerblock {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
 }
