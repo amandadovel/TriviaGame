@@ -16,32 +16,63 @@ $(document).ready(function(){
             question: "What is the famous beach called from the movie 'The Beach'?",
             choices: ["Koh Lanta", "Koh Phi Phi", "Maya Bay", "Leonardo Di Caprio is hot"],
             answer: 2,
-            photo: "../assets/images/mayabay.jpg"
+            photo: "assets/images/mayabay.jpg"
         },
         {
             question: "What is Angkor Wat?",
             choices: ["Worlds largest Religious Monument", "King Tut's tomb", "A city in Vietnam", "Chinese Food"],
             answer: 0,
-            photo:"../assets/images/agkorwat.jpg"
+            photo:"assets/images/angkorwat.jpg"
         },
         {
             question: "The Daintree Rainforest is the oldest tropical rainforest in the world, and is in which country?",
             choices: ["Costa Rica", "Thailand", "Fiji", "Australia"],
             answer: 3,
-            photo: "../assets/images/daintree.jpg"
+            photo: "assets/images/daintree.jpg"
         },
         {
             question: "The most expensive beef in the world comes from...",
             choices: ["Australia", "America", "Japan", "Canada"],
             answer: 2,
-            photo: "../assets/images/japan.jpg"
+            photo: "assets/images/japan.jpg"
         },
         {
             question: "The only native mammals to this country are 2 species of bats...",
             choices: ["Laos", "New Zealand", "Russia", "Sri Lanka"],
             answer: 1,
-            photo: "../assets/images/bats.jpg"
+            photo: "assets/images/bats.jpg"
         },
+        {
+            question: "What event takes place at Black Rock City?",
+            choices: ["A large religious gathering to worship a giant black rock", "A Native American pow wow", "running of the bulls", "Thousands gather to burn a giant wooden sculpture of a man"],
+            answer: 3,
+            photo:""
+        },
+        {
+            question: "Which of these countries is the birth place of Yoga?",
+            choices: "",
+            answer: "",
+            photo:""
+        },
+        {
+            question: "",
+            choices: "",
+            answer: "",
+            photo:""
+        }, 
+        {
+            question: "",
+            choices: "",
+            answer: "",
+            photo:""
+        },
+        {
+            question: "",
+            choices: "",
+            answer: "",
+            photo:""
+        },
+
     ]
 //console.log(options[0].question);
 
@@ -82,14 +113,14 @@ function runTimer() {
 // timer countdown function
 
 function decrement() {
-    $("#timeleft").html("<h3>Time Remaining: " + timer + "</h3>");
+    $("#timeremaining").html("<h3>Time Remaining: " + timer + "</h3>");
     timer --;
 
     if (timer === 0) {
         unanswerCount++;
         stop();
-        $("#answerblock").html("<p>Time's up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
-        hidepicture();
+        $("#answerblock").html("<p>Time's up! The correct answer is: " + pick.choices[pick.answer] + "</p>");
+        hidePicture();
     }
 }
 // stop timer function
@@ -105,6 +136,89 @@ function stop() {
 function displayQuestion() {
     index = Math.floor(Math.random()*options.length);
     pick = options[index];
+
+// this if/ else is so the same question does not show up more than once.
+    if (pick.shown) {
+        displayQuestion();
+    } else {
+        console.log(pick.question);
+
+// goes through answer array and displays in html
+    $("#questionblock").html("<h2>" + pick.question + "</h2>");
+    for (var i = 0; i < pick.choices.length; i ++){
+        var userChoice = $("<div>");
+        userChoice.addClass("answerchoice");
+        userChoice.html(pick.choices[i]);
+
+// assign array position so it can check answer
+    userChoice.attr("data-guessvalue", i);
+    $("#answerblock").append(userChoice);
+    }
+    }
+
+// click function to select answer and outcomes
+    $(".answerchoice").on("click", function(){
+
+// grab array position from userGuess
+    userGuess = parseInt($(this).attr("data-guessvalue"));
+
+// correct or wrong guess if else statements
+    if (userGuess === pick.answer) {
+        stop();
+        correctCount++;
+        userGuess="";
+        $("#answerblock").html("<p>Correct!<p>");
+        hidePicture();
+    } else {
+        stop();
+        wrongCount++;
+        userGuess="";
+        $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.choices[pick.answer] + "</p>");
+        hidePicture();
+    }
+
+    })
 }
+// Defines hidepicturefunction
+    function hidePicture () {
+        $("#answerblock").append("<img src="  + pick.photo + ">");
+        newArray.push(pick);
+        options.splice(index,1);
+
+        var hidPic = setTimeout(function() {
+            $("#answerblock").empty();
+            timer= 20;
+
+// runs score screen once all questions have been answered
+    if ((wrongCount + correctCount + unanswerCount) === qCount) {
+        $("#questionblock").empty();
+        $("#questionblock").html("<h3>Game Over! Final scores: </h3>");
+        $("#answerblock").append("<h4>Correct: " + correctCount + "</h4>");
+        $("#answerblock").append("<h4>Incorrect: " + wrongCount + "</h4>");
+        $("#answerblock").append("<h4>Unanswered: " + unanswerCount + "</h4>");
+        $("#reset").show();
+        correctCount = 0;
+        wrongCount = 0;
+        unanswerCount = 0;
+
+    } else {
+        runTimer();
+        displayQuestion();
+
+    }
+        }, 3000);
+    }
+
+// reset function 
+    $("#reset").on("click", function() {
+        $("#reset").hide();
+        $("#answerblock").empty();
+        $("#questionblock").empty();
+        for(var i=0; i < holder.length; i++) {
+            options.push(holder[i]);
+        }
+        runTimer();
+        displayQuestion();
+    })
 
 })
