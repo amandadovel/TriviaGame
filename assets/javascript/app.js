@@ -67,7 +67,7 @@ $(document).ready(function(){
             photo:"assets/images/nevis.jpg"
         },
         {
-            question: "This animal is monogamous for life and faced extinction in Costa Rica because once they're separated from their mate they will never mate again.",
+            question: "This animal faced extinction in Costa Rica because they are monogamous for life, once they're separated from their mate they will never mate again.",
             choices: ["Jaguars", "Parrots", "Monkeys", "Toucans"],
             answer: 1,
             photo:"assets/images/parrots.jpg"
@@ -220,5 +220,5 @@ function displayQuestion() {
         runTimer();
         displayQuestion();
     })
-
+  
 })

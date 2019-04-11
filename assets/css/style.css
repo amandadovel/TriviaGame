@@ -25,6 +25,11 @@ body {
     margin-left: 45%;
 }
 
+.btn-success {
+    background-color:#016028;
+    color: #c4f5d0;   
+}
+
 #timeremaining {
     text-align: center;
     font-family: 'Playfair Display', serif;
@@ -39,4 +44,5 @@ body {
 #answerblock {
     text-align: center;
     font-family: 'Playfair Display', serif;
+    cursor: pointer;
 }
