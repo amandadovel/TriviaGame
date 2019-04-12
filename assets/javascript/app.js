@@ -44,7 +44,7 @@ $(document).ready(function(){
         },
         {
             question: "What event takes place at Black Rock City?",
-            choices: ["A large religious gathering to worship a giant black rock", "A Native American pow wow", "running of the bulls", "Thousands gather to burn a giant wooden sculpture of a man"],
+            choices: ["A large religious gathering to worship a giant black rock", "A Native American pow wow", "Running of the bulls", "Thousands gather to burn a giant wooden sculpture of a man"],
             answer: 3,
             photo:"assets/images/burningman.jpeg"
         },
@@ -80,7 +80,7 @@ $(document).ready(function(){
 var correctCount = 0;
 var wrongCount = 0;
 var unanswerCount = 0;
-var timer = 20;
+var timer = 30;
 var intervalId;
 var userGuess = "";
 var running = false;
@@ -187,7 +187,7 @@ function displayQuestion() {
 
         var hidPic = setTimeout(function() {
             $("#answerblock").empty();
-            timer= 20;
+            timer= 30;
 
 // runs score screen once all questions have been answered
     if ((wrongCount + correctCount + unanswerCount) === qCount) {
