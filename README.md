@@ -4,3 +4,6 @@ In this game, user will go through a series of 10 multiple choice questions abou
 
 Technologies used:
 HTML, CSS, Javascript, jQuery
+
+Link to Project:
+https://amandadovel.github.io/TriviaGame/
